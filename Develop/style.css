@@ -69,3 +69,8 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+.addstime{
+  background-color: #06aed5;
+  width: 60px;
+  height: 70px;
+}

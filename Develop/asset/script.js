@@ -28,10 +28,21 @@ const workTime = [
 // uses arrow function to set items for the times
 const Item = (time) => `
 <div class="input d-flex ">
-<label class="addstime" for="label">${time}</label>
+<label class="addstime d-flex <div class="d-flex ">
+${time}</label>
 <input class="flex-fill" type="textarea" id="label" maxlength="100%" />
 <button class='button' id='btn'>Save</button>
 </div>   
 `;
 //adds items through html starting with my array for work time and using map method to place the html code for every time avaibable
 $(".list-items").html(workTime.map(Item).join(""));
+
+let btnDsn = document.querySelector("#label");
+localStorage.setItem('click','label');
+let name = localStorage.getItem('Name');
+  
+(function (){
+    btnDsn.onclick = function() {
+        btnDsn.textContent =  label;
+    };
+})();
