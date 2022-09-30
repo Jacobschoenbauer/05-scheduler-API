@@ -9,10 +9,10 @@
 
 const addTime = document.querySelector(".addstime");
 const repeatSection = document.querySelector(".input");
-const saveInfo = document.getElementById("label")
-const saveButton = document.getElementById("btn")
-const theUl = document.getElementById("listoftodos")
-var namie = []
+const saveInfo = document.getElementById("label");
+const saveButton = document.getElementById("btn");
+const theUl = document.getElementById("listoftodos");
+let todoArray = [];
 
 let today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
@@ -30,50 +30,18 @@ const workTime = [
   "5 p.m.",
 ];
 
-function addAnswerToLocalStorage() {
-  const namie = saveInfo.value;
-  localStorage.setItem("answer", namie);
-}
-for (var i = 0; i < namie.length; i++) {
-  var nightName = namie[i];
-
-  
-
-namie[i] = saveInfo.textContent
-localStorage.setItem("namie", JSON.stringify(names));
-
-var storedNames = JSON.parse(localStorage.getItem("names")); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// uses arrow function to set items for the times
-const Item = (time) => `
+// uses arrow function to set items for the times sets a event to click so info goes to console
+const Item = (time) =>
+  $(`
 <div class="input d-flex ">
-<label class="addstime d-flex <div class="d-flex ">
+<label class="addstime d-flex">
 ${time}</label>
 <input class="flex-fill" type="textarea" id="label" maxlength="100%" />
-<ul id="listoftodos" class="d-flex">
+<ul id="listoftodos" class="d-flex"></u>
 <button class='button' id='btn'>Save</button>
 </div>   
-`;
+`).on("click", (e) => {
+    localStorage.setItem("Todo", time);
+  });
 //adds items through html starting with my array for work time and using map method to place the html code for every time avaibable
-$(".list-items").html(workTime.map(Item).join(""));
-
-
-
-
-
-saveButton.addEventListener("click", addAnswerToLocalStorage);
+$(".list-items").append(workTime.map(Item));
