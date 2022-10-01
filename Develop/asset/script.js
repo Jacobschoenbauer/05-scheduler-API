@@ -7,41 +7,25 @@
 // click button save button for the block the textfor the event is savedin local storage
 // i refresh page and events stay on page
 
-const addTime = document.querySelector(".addstime");
-const repeatSection = document.querySelector(".input");
-const saveInfo = document.getElementById("label");
-const saveButton = document.getElementById("btn");
-const theUl = document.getElementById("listoftodos");
-let todoArray = [];
+
+
 
 let today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
 
-const workTime = [
-  "8 a.m.",
-  "9 a.m.",
-  "10 a.m.",
-  "11 a.m.",
-  "12 p.m.",
-  "1 p.m.",
-  "2 p.m.",
-  "3 p.m.",
-  "4 p.m.",
-  "5 p.m.",
-];
 
-// uses arrow function to set items for the times sets a event to click so info goes to console
-const Item = (time) =>
-  $(`
-<div class="input d-flex ">
-<label class="addstime d-flex">
-${time}</label>
-<input class="flex-fill" type="textarea" id="label" maxlength="100%" />
-<ul id="listoftodos" class="d-flex"></u>
-<button class='button' id='btn'>Save</button>
-</div>   
-`).on("click", (e) => {
-    localStorage.setItem("Todo", time);
-  });
-//adds items through html starting with my array for work time and using map method to place the html code for every time avaibable
-$(".list-items").append(workTime.map(Item));
+
+$(document).ready(function () {
+  // set click function to save text to local storage 
+  $(".button").on("click", function () {
+      // Get  values of the description in JQuery
+      var text = $(this).siblings(".thingstodo").val();
+      var time = $(this).parent().attr("id");
+      // Save text in local storage
+      
+      localStorage.setItem(time, text);
+  })
+
+  $("#6am.thingstodo").val(localStorage.getItem("6am"));
+
+}) 
