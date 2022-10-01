@@ -30,8 +30,8 @@ $(document).ready(function () {
     var timeNow = moment().hour();
 
     // loop over time blocks
-    $(".input").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("addtime")[1]);
+    $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
