@@ -26,11 +26,11 @@ $(document).ready(function () {
   
   });
   function timeTracker() {
-    //get current number of hours.
+    //get current the time and turns them into numbers so the id can be read from the number hour block
     var timeNow = moment().hour();
 
     // loop over time blocks
-    $(".time-block").each(function () {
+    $(".timeblock").each(function () {
         var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
