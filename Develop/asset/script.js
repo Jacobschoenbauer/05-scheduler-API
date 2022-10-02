@@ -7,7 +7,7 @@
 // click button save button for the block the textfor the event is savedin local storage
 // i refresh page and events stay on page
 
-
+//adds the date to the top of the screen
 let today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
 
