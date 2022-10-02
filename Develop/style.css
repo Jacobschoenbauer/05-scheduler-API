@@ -40,6 +40,9 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  
+  width: 60px;
+  height: 70px;
 }
 
 .past {
@@ -68,9 +71,4 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
-}
-.hour{
-  background-color: #06aed5;
-  width: 60px;
-  height: 70px;
 }
